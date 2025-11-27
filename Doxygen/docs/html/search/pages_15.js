@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['públicos_0',['Endpoints Públicos',['../index.html#autotoc_md24',1,'']]],
+  ['pagos_20boletos_1',['3. Ventas (&lt;span class=&quot;tt&quot;&gt;/reservas/*&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;/pagos/*&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;/boletos/*&lt;/span&gt;)',['../index.html#autotoc_md16',1,'']]],
+  ['pagos_20stubs_2',['Ventas y pagos (stubs)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md59',1,'']]],
+  ['paquetes_3',['2. Mapeo de paquetes',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_r_c_h_i_t_e_c_t_u_r_e.html#autotoc_md70',1,'']]],
+  ['para_20desarrolladores_20de_20app_20móvil_4',['🎯 Para Desarrolladores de App Móvil',['../index.html#autotoc_md49',1,'']]],
+  ['para_20desarrolladores_20de_20app_20móvil_20cliente_5',['🎯 Para Desarrolladores de App Móvil (Cliente)',['../index.html#autotoc_md2',1,'']]],
+  ['para_20el_20equipo_20backend_6',['🛠️ Para el Equipo Backend',['../index.html#autotoc_md3',1,'']]],
+  ['para_20iteración_201_7',['API (borrador para Iteración 1)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html',1,'']]],
+  ['para_20nuevas_20funcionalidades_3a_8',['Para nuevas funcionalidades:',['../index.html#autotoc_md38',1,'']]],
+  ['paradas_9',['Frecuencias y Paradas',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md55',1,'']]],
+  ['perfiles_10',['Perfiles',['../index.html#autotoc_md30',1,'']]],
+  ['persistencia_20sugerido_11',['5. Persistencia (sugerido)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_r_c_h_i_t_e_c_t_u_r_e.html#autotoc_md73',1,'']]],
+  ['personal_20de_20bus_20stub_12',['Móvil Personal de bus (stub)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md60',1,'']]],
+  ['planificaciones_20csv_13',['Planificaciones (CSV)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md63',1,'']]],
+  ['postman_14',['Colección Postman',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md65',1,'']]],
+  ['postman_20incluidas_15',['Colecciones Postman Incluidas',['../index.html#autotoc_md21',1,'']]],
+  ['prerrequisitos_16',['Prerrequisitos',['../index.html#autotoc_md5',1,'']]],
+  ['principal_17',['Esquema Principal',['../index.html#autotoc_md33',1,'']]],
+  ['principales_18',['📦 Módulos Principales',['../index.html#autotoc_md13',1,'']]],
+  ['producción_19',['Producción',['../index.html#autotoc_md36',1,'']]],
+  ['proyecto_20',['Arquitectura y estructura del proyecto',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_r_c_h_i_t_e_c_t_u_r_e.html',1,'']]],
+  ['puerto_208080_20en_20uso_21',['Puerto 8080 en uso',['../index.html#autotoc_md42',1,'']]]
+];

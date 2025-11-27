@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: Archivo de código fuente com/andinobus/backendsmartcode/catalogos/api/controllers/CooperativaController.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_cooperativa_controller_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CooperativaController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>com.andinobus.backendsmartcode.catalogos.api.controllers;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.CooperativaCreateRequest;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.CooperativaResponse;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.CooperativaUpdateRequest;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.application.services.CooperativaService;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> jakarta.validation.Valid;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.springframework.context.annotation.Profile;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> org.springframework.data.domain.Page;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> org.springframework.http.HttpStatus;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>@Profile(<span class="stringliteral">&quot;dev&quot;</span>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>@RestController</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>@RequestMapping(<span class="stringliteral">&quot;/cooperativas&quot;</span>)</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html">   50</a></span>public class <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a23c80fe17c6efe33249e154281881300">CooperativaController</a> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_cooperativa_service.html">CooperativaService</a> service;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a23c80fe17c6efe33249e154281881300">   59</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a23c80fe17c6efe33249e154281881300">CooperativaController</a>(<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_cooperativa_service.html">CooperativaService</a> service) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        this.service = service;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    @PostMapping</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    @ResponseStatus(HttpStatus.CREATED)</div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a6bbc4b4b8c79efb04dde13c58994a04e">   84</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_response.html">CooperativaResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a6bbc4b4b8c79efb04dde13c58994a04e">create</a>(@Valid @RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_create_request.html">CooperativaCreateRequest</a> request) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> service.create(request);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    @GetMapping</div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a9889d6cf4f1c16d0681e76a29bac9cef">  107</a></span>    <span class="keyword">public</span> Page&lt;CooperativaResponse&gt; <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a9889d6cf4f1c16d0681e76a29bac9cef">list</a>(@RequestParam(value = <span class="stringliteral">&quot;search&quot;</span>, required = <span class="keyword">false</span>) String search,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                                          @RequestParam(value = <span class="stringliteral">&quot;page&quot;</span>, defaultValue = <span class="stringliteral">&quot;0&quot;</span>) <span class="keywordtype">int</span> page,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                          @RequestParam(value = <span class="stringliteral">&quot;size&quot;</span>, defaultValue = <span class="stringliteral">&quot;20&quot;</span>) <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> service.list(search, page, size);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    @GetMapping(<span class="stringliteral">&quot;/{id}&quot;</span>)</div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a0e2fe5d85e934b10025e4e9adaa39ec9">  129</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_response.html">CooperativaResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a0e2fe5d85e934b10025e4e9adaa39ec9">get</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> service.get(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    @PutMapping(<span class="stringliteral">&quot;/{id}&quot;</span>)</div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#add242ee6024383a0023d979c1b080c13">  154</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_response.html">CooperativaResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#add242ee6024383a0023d979c1b080c13">update</a>(@PathVariable Long <span class="keywordtype">id</span>, @Valid @RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_update_request.html">CooperativaUpdateRequest</a> request) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">return</span> service.update(<span class="keywordtype">id</span>, request);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    @DeleteMapping(<span class="stringliteral">&quot;/{id}&quot;</span>)</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    @ResponseStatus(HttpStatus.NO_CONTENT)</div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a92227f46f09581922b61e29af37749db">  178</a></span>    public <span class="keywordtype">void</span> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a92227f46f09581922b61e29af37749db">delete</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        service.deleteLogical(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>}</div>
+</div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller_html_a0e2fe5d85e934b10025e4e9adaa39ec9"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a0e2fe5d85e934b10025e4e9adaa39ec9">com.andinobus.backendsmartcode.catalogos.api.controllers.CooperativaController.get</a></div><div class="ttdeci">CooperativaResponse get(@PathVariable Long id)</div><div class="ttdoc">Obtener cooperativa por ID.</div><div class="ttdef"><b>Definition</b> <a href="#l00129">CooperativaController.java:129</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller_html_a23c80fe17c6efe33249e154281881300"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a23c80fe17c6efe33249e154281881300">com.andinobus.backendsmartcode.catalogos.api.controllers.CooperativaController.CooperativaController</a></div><div class="ttdeci">CooperativaController(CooperativaService service)</div><div class="ttdoc">Constructor con inyección de dependencias.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">CooperativaController.java:59</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller_html_a6bbc4b4b8c79efb04dde13c58994a04e"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a6bbc4b4b8c79efb04dde13c58994a04e">com.andinobus.backendsmartcode.catalogos.api.controllers.CooperativaController.create</a></div><div class="ttdeci">CooperativaResponse create(@Valid @RequestBody CooperativaCreateRequest request)</div><div class="ttdoc">Crear nueva cooperativa de transporte.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">CooperativaController.java:84</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller_html_a92227f46f09581922b61e29af37749db"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a92227f46f09581922b61e29af37749db">com.andinobus.backendsmartcode.catalogos.api.controllers.CooperativaController.delete</a></div><div class="ttdeci">void delete(@PathVariable Long id)</div><div class="ttdoc">Eliminar cooperativa (eliminación lógica).</div><div class="ttdef"><b>Definition</b> <a href="#l00178">CooperativaController.java:178</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller_html_a9889d6cf4f1c16d0681e76a29bac9cef"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#a9889d6cf4f1c16d0681e76a29bac9cef">com.andinobus.backendsmartcode.catalogos.api.controllers.CooperativaController.list</a></div><div class="ttdeci">Page&lt; CooperativaResponse &gt; list(@RequestParam(value=&quot;search&quot;, required=false) String search, @RequestParam(value=&quot;page&quot;, defaultValue=&quot;0&quot;) int page, @RequestParam(value=&quot;size&quot;, defaultValue=&quot;20&quot;) int size)</div><div class="ttdoc">Listar cooperativas con búsqueda y paginación.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">CooperativaController.java:107</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller_html_add242ee6024383a0023d979c1b080c13"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_cooperativa_controller.html#add242ee6024383a0023d979c1b080c13">com.andinobus.backendsmartcode.catalogos.api.controllers.CooperativaController.update</a></div><div class="ttdeci">CooperativaResponse update(@PathVariable Long id, @Valid @RequestBody CooperativaUpdateRequest request)</div><div class="ttdoc">Actualizar datos de cooperativa existente.</div><div class="ttdef"><b>Definition</b> <a href="#l00154">CooperativaController.java:154</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_create_request_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_create_request.html">com.andinobus.backendsmartcode.catalogos.api.dto.CooperativaCreateRequest</a></div><div class="ttdef"><b>Definition</b> <a href="_cooperativa_create_request_8java_source.html#l00008">CooperativaCreateRequest.java:8</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_response.html">com.andinobus.backendsmartcode.catalogos.api.dto.CooperativaResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_cooperativa_response_8java_source.html#l00008">CooperativaResponse.java:8</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_update_request_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_cooperativa_update_request.html">com.andinobus.backendsmartcode.catalogos.api.dto.CooperativaUpdateRequest</a></div><div class="ttdef"><b>Definition</b> <a href="_cooperativa_update_request_8java_source.html#l00007">CooperativaUpdateRequest.java:7</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_cooperativa_service_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_cooperativa_service.html">com.andinobus.backendsmartcode.catalogos.application.services.CooperativaService</a></div><div class="ttdoc">Servicio de lógica de negocio para gestión de cooperativas de transporte.</div><div class="ttdef"><b>Definition</b> <a href="_cooperativa_service_8java_source.html#l00051">CooperativaService.java:51</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>andinobus</b></li><li class="navelem"><b>backendsmartcode</b></li><li class="navelem"><b>catalogos</b></li><li class="navelem"><b>api</b></li><li class="navelem"><b>controllers</b></li><li class="navelem"><b>CooperativaController.java</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

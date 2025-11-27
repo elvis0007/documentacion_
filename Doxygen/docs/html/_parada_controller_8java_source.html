@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: Archivo de código fuente com/andinobus/backendsmartcode/catalogos/api/controllers/ParadaController.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_parada_controller_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ParadaController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>com.andinobus.backendsmartcode.catalogos.api.controllers;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.ParadaCreateRequest;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.ParadaResponse;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.ParadaUpdateRequest;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.application.services.ParadaService;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> jakarta.validation.Valid;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.springframework.context.annotation.Profile;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> org.springframework.http.HttpStatus;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>@Profile(<span class="stringliteral">&quot;dev&quot;</span>)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>@RestController</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html">   50</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#a73a7b07b944fafe9174b2de0f8a25ef5">ParadaController</a> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_parada_service.html">ParadaService</a> service;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#a73a7b07b944fafe9174b2de0f8a25ef5">   59</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#a73a7b07b944fafe9174b2de0f8a25ef5">ParadaController</a>(<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_parada_service.html">ParadaService</a> service) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        this.service = service;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    @PostMapping(<span class="stringliteral">&quot;/frecuencias/{frecuenciaId}/paradas&quot;</span>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    @ResponseStatus(HttpStatus.CREATED)</div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#a6f1c6cc61247345cedb861839ac1e5f7">   87</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_response.html">ParadaResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#a6f1c6cc61247345cedb861839ac1e5f7">create</a>(@PathVariable Long frecuenciaId, @Valid @RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_create_request.html">ParadaCreateRequest</a> request) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> service.create(frecuenciaId, request);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    @GetMapping(<span class="stringliteral">&quot;/frecuencias/{frecuenciaId}/paradas&quot;</span>)</div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#adaa2b2bb662ce6e56c0810d465ba194e">  112</a></span>    public List&lt;<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_response.html">ParadaResponse</a>&gt; <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#adaa2b2bb662ce6e56c0810d465ba194e">list</a>(@PathVariable Long frecuenciaId) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">return</span> service.listByFrecuencia(frecuenciaId);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    @GetMapping(<span class="stringliteral">&quot;/paradas/{id}&quot;</span>)</div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#aade552e73df3a807f863301924988603">  136</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_response.html">ParadaResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#aade552e73df3a807f863301924988603">get</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span> service.get(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    @PutMapping(<span class="stringliteral">&quot;/paradas/{id}&quot;</span>)</div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#af95b88a349ccfafd15087b66857ba664">  162</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_response.html">ParadaResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#af95b88a349ccfafd15087b66857ba664">update</a>(@PathVariable Long <span class="keywordtype">id</span>, @Valid @RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_update_request.html">ParadaUpdateRequest</a> request) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">return</span> service.update(<span class="keywordtype">id</span>, request);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    @DeleteMapping(<span class="stringliteral">&quot;/paradas/{id}&quot;</span>)</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    @ResponseStatus(HttpStatus.NO_CONTENT)</div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#afefd94ed0e435048dae4ec1c020fd6b6">  187</a></span>    public <span class="keywordtype">void</span> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#afefd94ed0e435048dae4ec1c020fd6b6">delete</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        service.delete(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
+</div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller_html_a6f1c6cc61247345cedb861839ac1e5f7"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#a6f1c6cc61247345cedb861839ac1e5f7">com.andinobus.backendsmartcode.catalogos.api.controllers.ParadaController.create</a></div><div class="ttdeci">ParadaResponse create(@PathVariable Long frecuenciaId, @Valid @RequestBody ParadaCreateRequest request)</div><div class="ttdoc">Agregar nueva parada a una frecuencia.</div><div class="ttdef"><b>Definition</b> <a href="#l00087">ParadaController.java:87</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller_html_a73a7b07b944fafe9174b2de0f8a25ef5"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#a73a7b07b944fafe9174b2de0f8a25ef5">com.andinobus.backendsmartcode.catalogos.api.controllers.ParadaController.ParadaController</a></div><div class="ttdeci">ParadaController(ParadaService service)</div><div class="ttdoc">Constructor con inyección de dependencias.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">ParadaController.java:59</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller_html_aade552e73df3a807f863301924988603"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#aade552e73df3a807f863301924988603">com.andinobus.backendsmartcode.catalogos.api.controllers.ParadaController.get</a></div><div class="ttdeci">ParadaResponse get(@PathVariable Long id)</div><div class="ttdoc">Obtener información detallada de una parada.</div><div class="ttdef"><b>Definition</b> <a href="#l00136">ParadaController.java:136</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller_html_adaa2b2bb662ce6e56c0810d465ba194e"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#adaa2b2bb662ce6e56c0810d465ba194e">com.andinobus.backendsmartcode.catalogos.api.controllers.ParadaController.list</a></div><div class="ttdeci">List&lt; ParadaResponse &gt; list(@PathVariable Long frecuenciaId)</div><div class="ttdoc">Listar todas las paradas de una frecuencia.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">ParadaController.java:112</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller_html_af95b88a349ccfafd15087b66857ba664"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#af95b88a349ccfafd15087b66857ba664">com.andinobus.backendsmartcode.catalogos.api.controllers.ParadaController.update</a></div><div class="ttdeci">ParadaResponse update(@PathVariable Long id, @Valid @RequestBody ParadaUpdateRequest request)</div><div class="ttdoc">Actualizar información de parada existente.</div><div class="ttdef"><b>Definition</b> <a href="#l00162">ParadaController.java:162</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller_html_afefd94ed0e435048dae4ec1c020fd6b6"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_parada_controller.html#afefd94ed0e435048dae4ec1c020fd6b6">com.andinobus.backendsmartcode.catalogos.api.controllers.ParadaController.delete</a></div><div class="ttdeci">void delete(@PathVariable Long id)</div><div class="ttdoc">Eliminar parada de una frecuencia.</div><div class="ttdef"><b>Definition</b> <a href="#l00187">ParadaController.java:187</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_create_request_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_create_request.html">com.andinobus.backendsmartcode.catalogos.api.dto.ParadaCreateRequest</a></div><div class="ttdef"><b>Definition</b> <a href="_parada_create_request_8java_source.html#l00010">ParadaCreateRequest.java:10</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_response.html">com.andinobus.backendsmartcode.catalogos.api.dto.ParadaResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_parada_response_8java_source.html#l00008">ParadaResponse.java:8</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_update_request_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_parada_update_request.html">com.andinobus.backendsmartcode.catalogos.api.dto.ParadaUpdateRequest</a></div><div class="ttdef"><b>Definition</b> <a href="_parada_update_request_8java_source.html#l00008">ParadaUpdateRequest.java:8</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_parada_service_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_parada_service.html">com.andinobus.backendsmartcode.catalogos.application.services.ParadaService</a></div><div class="ttdef"><b>Definition</b> <a href="_parada_service_8java_source.html#l00024">ParadaService.java:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>andinobus</b></li><li class="navelem"><b>backendsmartcode</b></li><li class="navelem"><b>catalogos</b></li><li class="navelem"><b>api</b></li><li class="navelem"><b>controllers</b></li><li class="navelem"><b>ParadaController.java</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

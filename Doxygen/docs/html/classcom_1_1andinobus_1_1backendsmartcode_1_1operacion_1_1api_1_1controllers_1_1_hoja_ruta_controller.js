@@ -1,0 +1,4 @@
+var classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller =
+[
+    [ "generar", "classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html#aff1284a1a84c638d26084622d25f8741", null ]
+];

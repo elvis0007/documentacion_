@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: 🚌 Backend AndinoBus - Sistema de Gestión de Transporte</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">🚌 Backend AndinoBus - Sistema de Gestión de Transporte </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_r_e_a_d_m_e"></a></p>
+<p>Sistema backend para gestión de cooperativas de buses interprovinciales, reservas, ventas y embarque.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+📚 Documentación</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+🎯 Para Desarrolladores de App Móvil (Cliente)</h2>
+<blockquote class="doxtable">
+<p><b>¿Vas a desarrollar la app móvil?</b> Empieza aquí ⬇️ </p>
+</blockquote>
+<ol type="1">
+<li><b>📱 RESUMEN_API_MOVIL.md</b> - <em>EMPIEZA AQUÍ</em> - Guía rápida de inicio</li>
+<li><b>📖 DOCUMENTACION_API_CLIENTE.md</b> - Documentación completa de todos los endpoints</li>
+<li><b>🗺️ MAPA_ENDPOINTS.md</b> - Diagramas visuales y flujos de datos</li>
+<li><b>💻 GUIA_INTEGRACION_MOVIL.md</b> - Código de ejemplo para React Native y Flutter</li>
+<li><b><a href="postman/AndinoBus-Cliente-App.postman_collection.json">📬 Colección Postman</a></b> - Importa y prueba todos los endpoints</li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+🛠️ Para el Equipo Backend</h2>
+<ul>
+<li><b><a class="el" href="md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_r_c_h_i_t_e_c_t_u_r_e.html">🏗️ ARCHITECTURE.md</a></b> - Arquitectura del sistema y estructura de paquetes</li>
+<li><b>📋 PLAN_DE_TRABAJO.md</b> - Plan de desarrollo e iteraciones</li>
+<li><b>🧪 GUIA_DE_PRUEBAS.md</b> - Guía de testing</li>
+<li><b><a class="el" href="md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html">🔗 API.md</a></b> - Especificación completa de la API</li>
+<li><b>⚡ BACKEND_LINEA_BASE.md</b> - Línea base del backend</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+🚀 Inicio Rápido</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Prerrequisitos</h2>
+<ul>
+<li>Java 17+</li>
+<li>PostgreSQL 13+ (opcional para modo dev)</li>
+<li>Maven 3.8+</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Instalación</h2>
+<div class="fragment"><div class="line"># Clonar el repositorio</div>
+<div class="line">git clone https://github.com/AlexiP18/backend-andinobus.git</div>
+<div class="line">cd backend-andinobus</div>
+<div class="line"> </div>
+<div class="line"># Configurar base de datos (opcional)</div>
+<div class="line">cp src/main/resources/application-dev.properties.example src/main/resources/application-dev.properties</div>
+<div class="line"># Editar application-dev.properties con tus credenciales</div>
+<div class="line"> </div>
+<div class="line"># Compilar</div>
+<div class="line">mvn clean package</div>
+<div class="line"> </div>
+<div class="line"># Ejecutar</div>
+<div class="line">mvn spring-boot:run</div>
+</div><!-- fragment --><p>O en Windows: </p><div class="fragment"><div class="line">run-dev.bat</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Modo Demo (Sin Base de Datos)</h2>
+<p>El backend funciona sin configurar PostgreSQL usando stubs en memoria para desarrollo rápido.</p>
+<div class="fragment"><div class="line">mvn spring-boot:run -Dspring-boot.run.profiles=default</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Modo Desarrollo (Con Base de Datos)</h2>
+<div class="fragment"><div class="line">mvn spring-boot:run -Dspring-boot.run.profiles=dev</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+🏗️ Arquitectura</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Tecnologías</h2>
+<ul>
+<li><b>Spring Boot 3.5.7</b> - Framework principal</li>
+<li><b>PostgreSQL</b> - Base de datos</li>
+<li><b>Flyway</b> - Migraciones de BD</li>
+<li><b>Lombok</b> - Reducción de boilerplate</li>
+<li><b>Jakarta Validation</b> - Validación de datos</li>
+<li><b>Spring Security Crypto</b> - Cifrado de contraseñas</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Estructura Modular</h2>
+<div class="fragment"><div class="line">com.andinobus.backendsmartcode/</div>
+<div class="line">├── catalogos/          # Cooperativas, buses, frecuencias</div>
+<div class="line">├── usuarios/           # Autenticación y usuarios</div>
+<div class="line">├── ventas/             # Reservas, pagos, boletos</div>
+<div class="line">├── rutas/              # Búsqueda de rutas y viajes</div>
+<div class="line">├── embarque/           # Validación de boletos</div>
+<div class="line">├── operacion/          # Generación de hojas de ruta</div>
+<div class="line">├── planificacion/      # Planificación de viajes</div>
+<div class="line">├── configuracion/      # Configuración del sistema</div>
+<div class="line">└── common/             # Utilidades compartidas</div>
+</div><!-- fragment --><p>Cada módulo sigue arquitectura por capas:</p><ul>
+<li><span class="tt">api/</span> - Controladores REST y DTOs</li>
+<li><span class="tt">application/</span> - Servicios de aplicación</li>
+<li><span class="tt">domain/</span> - Entidades y lógica de negocio</li>
+<li><span class="tt">infrastructure/</span> - Implementaciones técnicas</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+🔐 Roles y Seguridad</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Rol  </th><th class="markdownTableHeadNone">Descripción  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>CLIENTE</b>  </td><td class="markdownTableBodyNone">Usuario final (app móvil)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>OFICINISTA</b>  </td><td class="markdownTableBodyNone">Personal de terminal  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>COOPERATIVA</b>  </td><td class="markdownTableBodyNone">Administrador de cooperativa  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>ADMIN</b>  </td><td class="markdownTableBodyNone">Super administrador  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+📦 Módulos Principales</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+1. Autenticación (<span class="tt">/auth/*</span>)</h2>
+<ul>
+<li>Login con email/password</li>
+<li>Registro de usuarios</li>
+<li>Gestión de tokens JWT</li>
+<li>Perfil de usuario</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+2. Rutas y Viajes (<span class="tt">/rutas/*</span>, <span class="tt">/viajes/*</span>)</h2>
+<ul>
+<li>Búsqueda de rutas por origen/destino</li>
+<li>Consulta de disponibilidad</li>
+<li>Información de buses</li>
+<li>Listado de viajes por fecha</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+3. Ventas (<span class="tt">/reservas/*</span>, <span class="tt">/pagos/*</span>, <span class="tt">/boletos/*</span>)</h2>
+<ul>
+<li>Creación de reservas (expiran en 15 min)</li>
+<li>Procesamiento de pagos (transferencia, PayPal)</li>
+<li>Emisión de boletos con QR</li>
+<li>Consulta de boletos</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+4. Embarque (<span class="tt">/embarque/*</span>)</h2>
+<ul>
+<li>Validación de boletos por código/QR</li>
+<li>Registro de embarques</li>
+<li>Control de boletos usados</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+5. Catálogos (Admin)</h2>
+<ul>
+<li>Gestión de cooperativas</li>
+<li>Gestión de buses</li>
+<li>Configuración de frecuencias</li>
+<li>Definición de paradas</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+6. Operación (Admin)</h2>
+<ul>
+<li>Generación automática de viajes</li>
+<li>Hojas de ruta</li>
+<li>Asignación de buses</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+🧪 Testing</h1>
+<div class="fragment"><div class="line"># Ejecutar tests</div>
+<div class="line">mvn test</div>
+<div class="line"> </div>
+<div class="line"># Ejecutar tests con cobertura</div>
+<div class="line">mvn verify</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+Colecciones Postman Incluidas</h2>
+<ul>
+<li><span class="tt">postman/AndinoBus-Cliente-App.postman_collection.json</span> - Endpoints para app móvil</li>
+<li><span class="tt">postman/BackendSmartcode.postman_collection.json</span> - Colección general</li>
+<li><span class="tt">postman/BackendSmartcode-OperacionesVentas.postman_collection.json</span> - Operaciones y ventas</li>
+<li><span class="tt">postman/Local.postman_environment.json</span> - Environment de desarrollo local</li>
+<li><span class="tt">postman/AndinoBus-Local.postman_environment.json</span> - Environment específico para app móvil</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+🌐 API Endpoints</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+Base URL</h2>
+<div class="fragment"><div class="line">http://localhost:8080</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+Endpoints Públicos</h2>
+<div class="fragment"><div class="line">POST /auth/login</div>
+<div class="line">POST /auth/register</div>
+<div class="line">GET  /rutas/buscar</div>
+<div class="line">GET  /viajes</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+Endpoints Autenticados (Cliente)</h2>
+<div class="fragment"><div class="line">GET  /users/me</div>
+<div class="line">POST /reservas</div>
+<div class="line">GET  /reservas/{id}</div>
+<div class="line">POST /pagos/transferencia</div>
+<div class="line">POST /boletos/emitir</div>
+<div class="line">GET  /boletos/{codigo}</div>
+<div class="line">POST /embarque/scan</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+Endpoints Administrativos</h2>
+<div class="fragment"><div class="line"># Cooperativas</div>
+<div class="line">GET    /cooperativas</div>
+<div class="line">POST   /cooperativas</div>
+<div class="line">PUT    /cooperativas/{id}</div>
+<div class="line">DELETE /cooperativas/{id}</div>
+<div class="line"> </div>
+<div class="line"># Buses</div>
+<div class="line">POST /cooperativas/{id}/buses</div>
+<div class="line">GET  /cooperativas/{id}/buses</div>
+<div class="line"> </div>
+<div class="line"># Frecuencias</div>
+<div class="line">POST /cooperativas/{id}/frecuencias</div>
+<div class="line">GET  /frecuencias</div>
+<div class="line">PUT  /frecuencias/{id}</div>
+<div class="line"> </div>
+<div class="line"># Paradas</div>
+<div class="line">POST /frecuencias/{id}/paradas</div>
+<div class="line">GET  /frecuencias/{id}/paradas</div>
+</div><!-- fragment --><p>Ver documentación completa en DOCUMENTACION_API_CLIENTE.md</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
+🔧 Configuración</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+Variables de Entorno</h2>
+<div class="fragment"><div class="line"># application.properties</div>
+<div class="line">spring.application.name=backend-smartcode</div>
+<div class="line">app.cors.allowed-origins=http://localhost:3000</div>
+<div class="line"> </div>
+<div class="line"># application-dev.properties (ejemplo)</div>
+<div class="line">spring.datasource.url=jdbc:postgresql://localhost:5432/andinobus</div>
+<div class="line">spring.datasource.username=tu_usuario</div>
+<div class="line">spring.datasource.password=tu_password</div>
+<div class="line">spring.jpa.hibernate.ddl-auto=validate</div>
+<div class="line">spring.flyway.enabled=true</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
+CORS</h2>
+<p>Configurado para desarrollo local en <span class="tt"><a href="http://localhost:3000">http://localhost:3000</a></span></p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
+Perfiles</h2>
+<ul>
+<li><span class="tt">default</span> - Modo demo sin BD</li>
+<li><span class="tt">dev</span> - Desarrollo con PostgreSQL</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
+📊 Base de Datos</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
+Migraciones Flyway</h2>
+<p>Ubicadas en: <span class="tt">src/main/resources/db/migration/</span></p>
+<ul>
+<li><span class="tt">V1__init_catalogos.sql</span> - Catálogos iniciales</li>
+<li><span class="tt">V2__usuarios_ventas_operacion_embarque.sql</span> - Módulos principales</li>
+<li><span class="tt">V3__user_tokens.sql</span> - Sistema de tokens</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
+Esquema Principal</h2>
+<ul>
+<li><span class="tt">cooperativas</span> - Cooperativas de transporte</li>
+<li><span class="tt">buses</span> - Flota de buses</li>
+<li><span class="tt">frecuencias</span> - Rutas regulares</li>
+<li><span class="tt">paradas</span> - Paradas intermedias</li>
+<li><span class="tt">viajes</span> - Viajes programados</li>
+<li><span class="tt">usuarios</span> - Usuarios del sistema</li>
+<li><span class="tt">reservas</span> - Reservas de pasajeros</li>
+<li><span class="tt">boletos</span> - Boletos emitidos</li>
+<li><span class="tt">pagos</span> - Transacciones de pago</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
+🚀 Despliegue</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
+Docker</h2>
+<div class="fragment"><div class="line"># Construir imagen</div>
+<div class="line">docker build -t backend-andinobus .</div>
+<div class="line"> </div>
+<div class="line"># Ejecutar</div>
+<div class="line">docker-compose up</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
+Producción</h2>
+<div class="fragment"><div class="line"># Generar JAR</div>
+<div class="line">mvn clean package -DskipTests</div>
+<div class="line"> </div>
+<div class="line"># Ejecutar</div>
+<div class="line">java -jar target/backend-smartcode-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
+📝 Flujo de Desarrollo</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
+Para nuevas funcionalidades:</h2>
+<ol type="1">
+<li>Crear rama desde <span class="tt">Alex</span></li>
+<li>Implementar en el módulo correspondiente siguiendo la estructura de capas</li>
+<li>Añadir tests</li>
+<li>Actualizar documentación</li>
+<li>Pull request a <span class="tt">Alex</span></li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
+Estándares de código:</h2>
+<ul>
+<li>DTOs para entrada/salida (nunca exponer entidades JPA)</li>
+<li>Validación con Jakarta Validation</li>
+<li>Manejo de errores centralizado</li>
+<li>Logs estructurados</li>
+<li>Transacciones explícitas con <span class="tt">@Transactional</span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md40"></a>
+🐛 Troubleshooting</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
+Error de conexión a BD</h2>
+<div class="fragment"><div class="line">Error: Cannot connect to database</div>
+</div><!-- fragment --><p> <b>Solución:</b> Verifica PostgreSQL está corriendo o usa perfil <span class="tt">default</span> para modo demo</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
+Puerto 8080 en uso</h2>
+<div class="fragment"><div class="line">Error: Port 8080 is already in use</div>
+</div><!-- fragment --><p> <b>Solución:</b> Cambia el puerto en <span class="tt">application.properties</span>: </p><div class="fragment"><div class="line">server.port=8081</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
+Flyway migration failed</h2>
+<div class="fragment"><div class="line">Error: Flyway migration failed</div>
+</div><!-- fragment --><p> <b>Solución:</b> Limpia la BD o ajusta <span class="tt">spring.flyway.baseline-on-migrate=true</span></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md44"></a>
+🤝 Contribuir</h1>
+<ol type="1">
+<li>Fork el proyecto</li>
+<li>Crea una rama feature (<span class="tt">git checkout -b feature/AmazingFeature</span>)</li>
+<li>Commit tus cambios (<span class="tt">git commit -m 'Add: Amazing Feature'</span>)</li>
+<li>Push a la rama (<span class="tt">git push origin feature/AmazingFeature</span>)</li>
+<li>Abre un Pull Request</li>
+</ol>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md45"></a>
+📄 Licencia</h1>
+<p>Proyecto académico - Universidad Nacional de Loja - DAS 2025</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md46"></a>
+👥 Equipo</h1>
+<p><b>Desarrolladores Backend:</b> Equipo SmartCode <b>Repositorio:</b> <a href="https://github.com/AlexiP18/backend-andinobus">https://github.com/AlexiP18/backend-andinobus</a> <b>Branch Principal:</b> Alex</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
+📞 Contacto</h1>
+<p>Para dudas o soporte, contacta al equipo de desarrollo.</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
+🎯 Para Desarrolladores de App Móvil</h1>
+<blockquote class="doxtable">
+<p><b>¿Desarrollando la app móvil?</b></p>
+<p>👉 Empieza aquí: RESUMEN_API_MOVIL.md</p>
+<p>Encontrarás:</p><ul>
+<li>✅ Endpoints que necesitas</li>
+<li>✅ Ejemplos de JSON</li>
+<li>✅ Flujos completos</li>
+<li>✅ Colección Postman lista para importar </li>
+</ul>
+</blockquote>
+<hr  />
+<p><b>¡Feliz desarrollo! 🚀</b> </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

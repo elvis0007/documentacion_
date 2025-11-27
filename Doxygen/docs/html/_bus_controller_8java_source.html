@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: Archivo de código fuente com/andinobus/backendsmartcode/catalogos/api/controllers/BusController.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_bus_controller_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BusController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>com.andinobus.backendsmartcode.catalogos.api.controllers;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.BusCreateRequest;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.api.dto.BusResponse;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> com.andinobus.backendsmartcode.catalogos.application.services.BusService;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> jakarta.validation.Valid;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> org.springframework.context.annotation.Profile;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.springframework.data.domain.Page;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> org.springframework.http.HttpStatus;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>@Profile(<span class="stringliteral">&quot;dev&quot;</span>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>@RestController</div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html">   45</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#ae4301b3259c460b984f5ba51a8b7ad83">BusController</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_bus_service.html">BusService</a> service;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#ae4301b3259c460b984f5ba51a8b7ad83">   54</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#ae4301b3259c460b984f5ba51a8b7ad83">BusController</a>(<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_bus_service.html">BusService</a> service) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        this.service = service;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    @PostMapping(<span class="stringliteral">&quot;/cooperativas/{cooperativaId}/buses&quot;</span>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    @ResponseStatus(HttpStatus.CREATED)</div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#aeec2ce5ac7e0f6fdcc88783ab48cf023">   82</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_response.html">BusResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#aeec2ce5ac7e0f6fdcc88783ab48cf023">create</a>(@PathVariable Long cooperativaId, @Valid @RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_create_request.html">BusCreateRequest</a> request) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">return</span> service.create(cooperativaId, request);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    @GetMapping(<span class="stringliteral">&quot;/cooperativas/{cooperativaId}/buses&quot;</span>)</div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#af4eeaf288d816600003d900be3cf5dcf">  109</a></span>    public Page&lt;<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_response.html">BusResponse</a>&gt; <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#af4eeaf288d816600003d900be3cf5dcf">listByCooperativa</a>(@PathVariable Long cooperativaId,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                               @RequestParam(value = <span class="stringliteral">&quot;page&quot;</span>, defaultValue = <span class="stringliteral">&quot;0&quot;</span>) <span class="keywordtype">int</span> page,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                               @RequestParam(value = <span class="stringliteral">&quot;size&quot;</span>, defaultValue = <span class="stringliteral">&quot;20&quot;</span>) <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">return</span> service.listByCooperativa(cooperativaId, page, size);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    @GetMapping(<span class="stringliteral">&quot;/buses/{id}&quot;</span>)</div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#a8a93277d5cfc3e124f1b2d0c83a3eb1b">  135</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_response.html">BusResponse</a> <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#a8a93277d5cfc3e124f1b2d0c83a3eb1b">get</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">return</span> service.get(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+</div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller_html_a8a93277d5cfc3e124f1b2d0c83a3eb1b"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#a8a93277d5cfc3e124f1b2d0c83a3eb1b">com.andinobus.backendsmartcode.catalogos.api.controllers.BusController.get</a></div><div class="ttdeci">BusResponse get(@PathVariable Long id)</div><div class="ttdoc">Obtener información completa de un bus específico.</div><div class="ttdef"><b>Definition</b> <a href="#l00135">BusController.java:135</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller_html_ae4301b3259c460b984f5ba51a8b7ad83"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#ae4301b3259c460b984f5ba51a8b7ad83">com.andinobus.backendsmartcode.catalogos.api.controllers.BusController.BusController</a></div><div class="ttdeci">BusController(BusService service)</div><div class="ttdoc">Constructor con inyección de dependencias.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">BusController.java:54</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller_html_aeec2ce5ac7e0f6fdcc88783ab48cf023"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#aeec2ce5ac7e0f6fdcc88783ab48cf023">com.andinobus.backendsmartcode.catalogos.api.controllers.BusController.create</a></div><div class="ttdeci">BusResponse create(@PathVariable Long cooperativaId, @Valid @RequestBody BusCreateRequest request)</div><div class="ttdoc">Registrar nuevo bus para una cooperativa.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">BusController.java:82</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller_html_af4eeaf288d816600003d900be3cf5dcf"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1controllers_1_1_bus_controller.html#af4eeaf288d816600003d900be3cf5dcf">com.andinobus.backendsmartcode.catalogos.api.controllers.BusController.listByCooperativa</a></div><div class="ttdeci">Page&lt; BusResponse &gt; listByCooperativa(@PathVariable Long cooperativaId, @RequestParam(value=&quot;page&quot;, defaultValue=&quot;0&quot;) int page, @RequestParam(value=&quot;size&quot;, defaultValue=&quot;20&quot;) int size)</div><div class="ttdoc">Listar buses de una cooperativa específica.</div><div class="ttdef"><b>Definition</b> <a href="#l00109">BusController.java:109</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_create_request_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_create_request.html">com.andinobus.backendsmartcode.catalogos.api.dto.BusCreateRequest</a></div><div class="ttdef"><b>Definition</b> <a href="_bus_create_request_8java_source.html#l00008">BusCreateRequest.java:8</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1api_1_1dto_1_1_bus_response.html">com.andinobus.backendsmartcode.catalogos.api.dto.BusResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_bus_response_8java_source.html#l00008">BusResponse.java:8</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_bus_service_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1application_1_1services_1_1_bus_service.html">com.andinobus.backendsmartcode.catalogos.application.services.BusService</a></div><div class="ttdoc">Servicio de lógica de negocio para gestión de buses.</div><div class="ttdef"><b>Definition</b> <a href="_bus_service_8java_source.html#l00052">BusService.java:52</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>andinobus</b></li><li class="navelem"><b>backendsmartcode</b></li><li class="navelem"><b>catalogos</b></li><li class="navelem"><b>api</b></li><li class="navelem"><b>controllers</b></li><li class="navelem"><b>BusController.java</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

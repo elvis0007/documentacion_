@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: Archivo de código fuente com/andinobus/backendsmartcode/ventas/api/controllers/VentasController.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_ventas_controller_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VentasController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>com.andinobus.backendsmartcode.ventas.api.controllers;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> com.andinobus.backendsmartcode.ventas.api.dto.VentasDtos;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> jakarta.validation.Valid;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> org.springframework.http.HttpStatus;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> org.springframework.http.MediaType;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.springframework.web.multipart.MultipartFile;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.math.BigDecimal;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.time.OffsetDateTime;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.time.format.DateTimeFormatter;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.util.*;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.util.concurrent.ConcurrentHashMap;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> java.util.concurrent.atomic.AtomicLong;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>@RestController</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html">   48</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html">VentasController</a> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> AtomicLong RESERVA_SEQ = <span class="keyword">new</span> AtomicLong(1000);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;Long, <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_detalle_response.html">ReservaDetalleResponse</a>&gt; RESERVAS = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_boleto_response.html">BoletoResponse</a>&gt; BOLETOS = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    @PostMapping(<span class="stringliteral">&quot;/reservas&quot;</span>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    @ResponseStatus(HttpStatus.CREATED)</div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a8d4f1660112beec9892fd2a012a0688b">   78</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.ReservaResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a8d4f1660112beec9892fd2a012a0688b">crearReserva</a>(@Valid @RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.ReservaCreateRequest req) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">long</span> <span class="keywordtype">id</span> = RESERVA_SEQ.incrementAndGet();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        String expira = OffsetDateTime.now().plusMinutes(15).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_detalle_response.html">ReservaDetalleResponse</a> detalle = <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_detalle_response.html">ReservaDetalleResponse</a>.builder()</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                .id(<span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                .viajeId(req.getViajeId())</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                .cliente(<span class="stringliteral">&quot;Cliente Demo&quot;</span>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                .asientos(req.getAsientos())</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                .estado(<span class="stringliteral">&quot;pendiente&quot;</span>)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                .monto(<span class="keyword">new</span> BigDecimal(<span class="stringliteral">&quot;10.00&quot;</span>))</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                .build();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        RESERVAS.put(<span class="keywordtype">id</span>, detalle);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_response.html">ReservaResponse</a>.builder()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                .<span class="keywordtype">id</span>(<span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                .viajeId(req.getViajeId())</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                .asientos(req.getAsientos())</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                .estado(<span class="stringliteral">&quot;pendiente&quot;</span>)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                .fechaExpira(expira)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                .build();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    @GetMapping(<span class="stringliteral">&quot;/reservas/{id}&quot;</span>)</div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#af640abdbb262357669a52a5a6f1c13f4">  114</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.ReservaDetalleResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#af640abdbb262357669a52a5a6f1c13f4">obtenerReserva</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        VentasDtos.ReservaDetalleResponse d = RESERVAS.get(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">if</span> (d == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Reserva no encontrada (stub)&quot;</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">return</span> d;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    @PostMapping(path = <span class="stringliteral">&quot;/pagos/transferencia&quot;</span>, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    @ResponseStatus(HttpStatus.ACCEPTED)</div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a4b0daa946fe6a9c9b6f7544638727c7b">  145</a></span>    public Map&lt;String, Object&gt; <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a4b0daa946fe6a9c9b6f7544638727c7b">pagoTransferenciaMultipart</a>(@RequestPart(value = <span class="stringliteral">&quot;comprobante&quot;</span>, required = false) MultipartFile comprobante,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                                                          @RequestParam(<span class="stringliteral">&quot;reservaId&quot;</span>) Long reservaId,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                                                          @RequestParam(value = <span class="stringliteral">&quot;monto&quot;</span>, required = false) BigDecimal monto,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                                                          @RequestParam(value = <span class="stringliteral">&quot;referencia&quot;</span>, required = false) String referencia) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        Map&lt;String, Object&gt; res = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        res.put(<span class="stringliteral">&quot;status&quot;</span>, <span class="stringliteral">&quot;RECEIVED&quot;</span>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        res.put(<span class="stringliteral">&quot;reservaId&quot;</span>, reservaId);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        res.put(<span class="stringliteral">&quot;monto&quot;</span>, monto);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        res.put(<span class="stringliteral">&quot;referencia&quot;</span>, referencia);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        res.put(<span class="stringliteral">&quot;comprobanteNombre&quot;</span>, comprobante != <span class="keyword">null</span> ? comprobante.getOriginalFilename() : <span class="keyword">null</span>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="comment">// marcar como pagado en stub</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        VentasDtos.ReservaDetalleResponse d = RESERVAS.get(reservaId);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">if</span> (d != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            RESERVAS.put(reservaId, <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_detalle_response.html">ReservaDetalleResponse</a>.builder()</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                    .id(d.getId()).viajeId(d.getViajeId()).cliente(d.getCliente())</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                    .asientos(d.getAsientos()).estado(<span class="stringliteral">&quot;pagado&quot;</span>).monto(d.getMonto()).build());</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    }</div>
+</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    @PostMapping(path = <span class="stringliteral">&quot;/pagos/paypal/webhook&quot;</span>, consumes = MediaType.APPLICATION_JSON_VALUE)</div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#ad524e8ccc494824e26ef4341c0a7ab8d">  183</a></span>    public Map&lt;String, Object&gt; <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#ad524e8ccc494824e26ef4341c0a7ab8d">paypalWebhook</a>(@RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.PaypalWebhookEvent event) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        Map&lt;String, Object&gt; res = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        res.put(<span class="stringliteral">&quot;received&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        res.put(<span class="stringliteral">&quot;event_type&quot;</span>, event.getEvent_type());</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        res.put(<span class="stringliteral">&quot;resource_id&quot;</span>, event.getResource_id());</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    @PostMapping(<span class="stringliteral">&quot;/boletos/emitir&quot;</span>)</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    @ResponseStatus(HttpStatus.CREATED)</div>
+<div class="foldopen" id="foldopen00212" data-start="{" data-end="}">
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#ac08cc6c4bf347b7b51c75ea510b4fafb">  212</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.BoletoResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#ac08cc6c4bf347b7b51c75ea510b4fafb">emitir</a>(@RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.EmitirBoletoRequest req) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        VentasDtos.ReservaDetalleResponse d = RESERVAS.get(req.getReservaId());</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        if (d == <span class="keyword">null</span> || !<span class="stringliteral">&quot;pagado&quot;</span>.equalsIgnoreCase(d.getEstado())) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            throw new IllegalArgumentException(<span class="stringliteral">&quot;La reserva no está pagada o no existe (stub)&quot;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        String codigo = UUID.randomUUID().toString().substring(0, 8).toUpperCase();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_boleto_response.html">BoletoResponse</a> br = <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_boleto_response.html">BoletoResponse</a>.builder()</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                .codigo(codigo)</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                .reservaId(req.getReservaId())</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                .estado(<span class="stringliteral">&quot;emitido&quot;</span>)</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                .qr(<span class="stringliteral">&quot;QR-&quot;</span> + codigo)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                .build();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        BOLETOS.put(codigo, br);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">return</span> br;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    }</div>
+</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    @GetMapping(<span class="stringliteral">&quot;/boletos/{codigo}&quot;</span>)</div>
+<div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a311f17736e3563efa04cda014eb39773">  248</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">VentasDtos</a>.BoletoResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a311f17736e3563efa04cda014eb39773">obtenerBoleto</a>(@PathVariable String codigo) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        VentasDtos.BoletoResponse br = BOLETOS.get(codigo);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="keywordflow">if</span> (br == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Boleto no encontrado (stub)&quot;</span>);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">return</span> br;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}</div>
+</div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController</a></div><div class="ttdoc">Controlador REST para gestión del proceso de ventas de boletos.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">VentasController.java:48</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller_html_a311f17736e3563efa04cda014eb39773"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a311f17736e3563efa04cda014eb39773">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController.obtenerBoleto</a></div><div class="ttdeci">VentasDtos.BoletoResponse obtenerBoleto(@PathVariable String codigo)</div><div class="ttdoc">Obtener boleto por código único.</div><div class="ttdef"><b>Definition</b> <a href="#l00248">VentasController.java:248</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller_html_a4b0daa946fe6a9c9b6f7544638727c7b"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a4b0daa946fe6a9c9b6f7544638727c7b">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController.pagoTransferenciaMultipart</a></div><div class="ttdeci">Map&lt; String, Object &gt; pagoTransferenciaMultipart(@RequestPart(value=&quot;comprobante&quot;, required=false) MultipartFile comprobante, @RequestParam(&quot;reservaId&quot;) Long reservaId, @RequestParam(value=&quot;monto&quot;, required=false) BigDecimal monto, @RequestParam(value=&quot;referencia&quot;, required=false) String referencia)</div><div class="ttdoc">Procesar pago por transferencia bancaria con comprobante.</div><div class="ttdef"><b>Definition</b> <a href="#l00145">VentasController.java:145</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller_html_a8d4f1660112beec9892fd2a012a0688b"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a8d4f1660112beec9892fd2a012a0688b">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController.crearReserva</a></div><div class="ttdeci">VentasDtos.ReservaResponse crearReserva(@Valid @RequestBody VentasDtos.ReservaCreateRequest req)</div><div class="ttdoc">Crear nueva reserva de asientos para un viaje.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">VentasController.java:78</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller_html_ac08cc6c4bf347b7b51c75ea510b4fafb"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#ac08cc6c4bf347b7b51c75ea510b4fafb">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController.emitir</a></div><div class="ttdeci">VentasDtos.BoletoResponse emitir(@RequestBody VentasDtos.EmitirBoletoRequest req)</div><div class="ttdoc">Emitir boleto electrónico para una reserva pagada.</div><div class="ttdef"><b>Definition</b> <a href="#l00212">VentasController.java:212</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller_html_ad524e8ccc494824e26ef4341c0a7ab8d"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#ad524e8ccc494824e26ef4341c0a7ab8d">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController.paypalWebhook</a></div><div class="ttdeci">Map&lt; String, Object &gt; paypalWebhook(@RequestBody VentasDtos.PaypalWebhookEvent event)</div><div class="ttdoc">Webhook para recibir notificaciones de pagos de PayPal.</div><div class="ttdef"><b>Definition</b> <a href="#l00183">VentasController.java:183</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller_html_af640abdbb262357669a52a5a6f1c13f4"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#af640abdbb262357669a52a5a6f1c13f4">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController.obtenerReserva</a></div><div class="ttdeci">VentasDtos.ReservaDetalleResponse obtenerReserva(@PathVariable Long id)</div><div class="ttdoc">Consultar detalles de una reserva existente.</div><div class="ttdef"><b>Definition</b> <a href="#l00114">VentasController.java:114</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_boleto_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_boleto_response.html">com.andinobus.backendsmartcode.ventas.api.dto.VentasDtos.BoletoResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_ventas_dtos_8java_source.html#l00067">VentasDtos.java:67</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_detalle_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_detalle_response.html">com.andinobus.backendsmartcode.ventas.api.dto.VentasDtos.ReservaDetalleResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_ventas_dtos_8java_source.html#l00035">VentasDtos.java:35</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_1_1_reserva_response.html">com.andinobus.backendsmartcode.ventas.api.dto.VentasDtos.ReservaResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_ventas_dtos_8java_source.html#l00025">VentasDtos.java:25</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1dto_1_1_ventas_dtos.html">com.andinobus.backendsmartcode.ventas.api.dto.VentasDtos</a></div><div class="ttdef"><b>Definition</b> <a href="_ventas_dtos_8java_source.html#l00011">VentasDtos.java:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>andinobus</b></li><li class="navelem"><b>backendsmartcode</b></li><li class="navelem"><b>ventas</b></li><li class="navelem"><b>api</b></li><li class="navelem"><b>controllers</b></li><li class="navelem"><b>VentasController.java</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

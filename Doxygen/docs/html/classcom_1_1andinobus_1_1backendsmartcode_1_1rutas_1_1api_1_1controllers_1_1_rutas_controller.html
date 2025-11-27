@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: Referencia de la clase com.andinobus.backendsmartcode.rutas.api.controllers.RutasController</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html','','classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase com.andinobus.backendsmartcode.rutas.api.controllers.RutasController</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Controlador REST para gestión de rutas y viajes disponibles.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de colaboración de com.andinobus.backendsmartcode.rutas.api.controllers.RutasController:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller__coll__graph.png" border="0" usemap="#acom_8andinobus_8backendsmartcode_8rutas_8api_8controllers_8_rutas_controller_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="acom_8andinobus_8backendsmartcode_8rutas_8api_8controllers_8_rutas_controller_coll__map" id="acom_8andinobus_8backendsmartcode_8rutas_8api_8controllers_8_rutas_controller_coll__map">
+<area shape="rect" title="Controlador REST para gestión de rutas y viajes disponibles." alt="" coords="5,5,340,155"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a9ac6f5e11e14191211577c71cef77489" id="r_a9ac6f5e11e14191211577c71cef77489"><td class="memItemLeft" align="right" valign="top">RutasDtos.SearchRouteResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac6f5e11e14191211577c71cef77489">buscarRutas</a> (@RequestParam(required=false) String origen, @RequestParam(required=false) String destino, @RequestParam(required=false) String fecha, @RequestParam(required=false) String cooperativa, @RequestParam(required=false) String tipoAsiento, @RequestParam(required=false, name=&quot;tipoViaje&quot;) String tipoViaje, @RequestParam(defaultValue=&quot;0&quot;) Integer page, @RequestParam(defaultValue=&quot;20&quot;) Integer size)</td></tr>
+<tr class="memdesc:a9ac6f5e11e14191211577c71cef77489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buscar rutas disponibles con filtros opcionales.  <br /></td></tr>
+<tr class="memitem:a0900414dbe8a274f6929e61ab2b02c47" id="r_a0900414dbe8a274f6929e61ab2b02c47"><td class="memItemLeft" align="right" valign="top">RutasDtos.ViajesResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0900414dbe8a274f6929e61ab2b02c47">viajesPorFecha</a> (@RequestParam String fecha, @RequestParam(defaultValue=&quot;0&quot;) Integer page, @RequestParam(defaultValue=&quot;20&quot;) Integer size)</td></tr>
+<tr class="memdesc:a0900414dbe8a274f6929e61ab2b02c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener viajes programados para una fecha específica.  <br /></td></tr>
+<tr class="memitem:a949f84c9dfa6759bbf867ad8ae909cc0" id="r_a949f84c9dfa6759bbf867ad8ae909cc0"><td class="memItemLeft" align="right" valign="top">RutasDtos.DisponibilidadResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a949f84c9dfa6759bbf867ad8ae909cc0">disponibilidad</a> (@PathVariable Long id)</td></tr>
+<tr class="memdesc:a949f84c9dfa6759bbf867ad8ae909cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultar disponibilidad de asientos para un viaje específico.  <br /></td></tr>
+<tr class="memitem:ae17fc13e1c652a8f28056945dd28f35b" id="r_ae17fc13e1c652a8f28056945dd28f35b"><td class="memItemLeft" align="right" valign="top">RutasDtos.BusFichaResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae17fc13e1c652a8f28056945dd28f35b">busDeViaje</a> (@PathVariable Long id)</td></tr>
+<tr class="memdesc:ae17fc13e1c652a8f28056945dd28f35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener información del bus asignado a un viaje.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Controlador REST para gestión de rutas y viajes disponibles. </p>
+<p>Proporciona endpoints para buscar rutas de transporte, consultar viajes programados y verificar disponibilidad de asientos. Maneja la lógica de búsqueda por origen/destino/fecha y la consulta de información de buses asignados.</p>
+<p>Endpoints disponibles:</p><ul>
+<li>GET /api/rutas/buscar - Búsqueda de rutas con filtros</li>
+<li>GET /api/viajes - Viajes programados por fecha</li>
+<li>GET /api/viajes/{id}/disponibilidad - Disponibilidad de asientos</li>
+<li>GET /api/viajes/{id}/bus - Información del bus asignado</li>
+</ul>
+<p>Flujo típico de búsqueda:</p><ol type="1">
+<li>Cliente busca rutas por origen/destino/fecha</li>
+<li>Cliente selecciona una frecuencia específica</li>
+<li>Sistema muestra viajes disponibles para esa fecha</li>
+<li>Cliente consulta disponibilidad de asientos</li>
+<li>Cliente puede proceder a reservar</li>
+</ol>
+<dl class="section author"><dt>Autor</dt><dd>Equipo de Desarrollo AndinoBus </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2025-11-25 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0.0</dd></dl>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a> </dd>
+<dd>
+<a class="el" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html" title="Controlador REST para gestión del proceso de ventas de boletos.">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController</a> </dd>
+<dd>
+com.andinobus.backendsmartcode.catalogos</dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Implementación stub con datos de demostración </dd>
+<dd>
+Soporte para paginación en todos los endpoints de listado </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_rutas_controller_8java_source.html#l00041">41</a> del archivo <a class="el" href="_rutas_controller_8java_source.html">RutasController.java</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a9ac6f5e11e14191211577c71cef77489" name="a9ac6f5e11e14191211577c71cef77489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac6f5e11e14191211577c71cef77489">&#9670;&#160;</a></span>buscarRutas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RutasDtos.SearchRouteResponse com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.buscarRutas </td>
+          <td>(</td>
+          <td class="paramtype">@RequestParam(required=false) String</td>          <td class="paramname"><span class="paramname"><em>origen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(required=false) String</td>          <td class="paramname"><span class="paramname"><em>destino</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(required=false) String</td>          <td class="paramname"><span class="paramname"><em>fecha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(required=false) String</td>          <td class="paramname"><span class="paramname"><em>cooperativa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(required=false) String</td>          <td class="paramname"><span class="paramname"><em>tipoAsiento</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(required=false, name=&quot;tipoViaje&quot;) String</td>          <td class="paramname"><span class="paramname"><em>tipoViaje</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(defaultValue=&quot;0&quot;) Integer</td>          <td class="paramname"><span class="paramname"><em>page</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(defaultValue=&quot;20&quot;) Integer</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buscar rutas disponibles con filtros opcionales. </p>
+<p>Permite buscar rutas de transporte aplicando filtros por origen, destino, fecha, cooperativa y tipo de asiento. Devuelve información de frecuencias disponibles con horarios y capacidad de asientos.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">origen</td><td>Ciudad o parada de origen (opcional) </td></tr>
+    <tr><td class="paramname">destino</td><td>Ciudad o parada de destino (opcional) </td></tr>
+    <tr><td class="paramname">fecha</td><td>Fecha del viaje en formato YYYY-MM-DD (opcional) </td></tr>
+    <tr><td class="paramname">cooperativa</td><td>Nombre de la cooperativa (opcional) </td></tr>
+    <tr><td class="paramname">tipoAsiento</td><td>Tipo de asiento: "Normal" o "VIP" (opcional) </td></tr>
+    <tr><td class="paramname">tipoViaje</td><td>Tipo de viaje: "directo" o "con_paradas" (opcional) </td></tr>
+    <tr><td class="paramname">page</td><td>Número de página para paginación (default: 0) </td></tr>
+    <tr><td class="paramname">size</td><td>Tamaño de página (default: 20) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista paginada de rutas que coinciden con los filtros</dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Todos los parámetros de filtro son opcionales </dd>
+<dd>
+Soporta paginación para manejar grandes resultados </dd>
+<dd>
+Incluye información de asientos disponibles por tipo </dd></dl>
+<dl class="section warning"><dt>Atención</dt><dd>Implementación stub que devuelve datos de demostración</dd></dl>
+<dl class="section see"><dt>Ver también</dt><dd>RutasDtos.SearchRouteResponse </dd>
+<dd>
+RutasDtos.SearchRouteItem </dd>
+<dd>
+#viajesPorFecha(String, Integer, Integer) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_rutas_controller_8java_source.html#l00069">69</a> del archivo <a class="el" href="_rutas_controller_8java_source.html">RutasController.java</a>.</p>
+
+</div>
+</div>
+<a id="ae17fc13e1c652a8f28056945dd28f35b" name="ae17fc13e1c652a8f28056945dd28f35b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17fc13e1c652a8f28056945dd28f35b">&#9670;&#160;</a></span>busDeViaje()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RutasDtos.BusFichaResponse com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.busDeViaje </td>
+          <td>(</td>
+          <td class="paramtype">@PathVariable Long</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtener información del bus asignado a un viaje. </p>
+<p>Proporciona detalles técnicos y operativos del bus asignado para un viaje específico, incluyendo datos de la cooperativa, especificaciones del vehículo y documentación.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador único del viaje </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Información completa del bus asignado al viaje</dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si el viaje no existe o no tiene bus asignado</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Nota</dt><dd>Incluye información de chasis, carrocería y placa </dd>
+<dd>
+Útil para mostrar detalles del vehículo a los pasajeros </dd>
+<dd>
+Usado por personal operativo para verificación </dd></dl>
+<dl class="section warning"><dt>Atención</dt><dd>Implementación stub con datos de demostración</dd></dl>
+<dl class="section see"><dt>Ver también</dt><dd>RutasDtos.BusFichaResponse </dd>
+<dd>
+<a class="el" href="classcom_1_1andinobus_1_1backendsmartcode_1_1catalogos_1_1domain_1_1entities_1_1_bus.html" title="Entidad que representa un vehículo de transporte.">com.andinobus.backendsmartcode.catalogos.domain.entities.Bus</a> </dd>
+<dd>
+#viajesPorFecha(String, Integer, Integer) </dd>
+<dd>
+<a class="el" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html" title="Controlador REST para generación de hojas de ruta operativas.">com.andinobus.backendsmartcode.operacion.api.controllers.HojaRutaController</a> </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_rutas_controller_8java_source.html#l00190">190</a> del archivo <a class="el" href="_rutas_controller_8java_source.html">RutasController.java</a>.</p>
+
+</div>
+</div>
+<a id="a949f84c9dfa6759bbf867ad8ae909cc0" name="a949f84c9dfa6759bbf867ad8ae909cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949f84c9dfa6759bbf867ad8ae909cc0">&#9670;&#160;</a></span>disponibilidad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RutasDtos.DisponibilidadResponse com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.disponibilidad </td>
+          <td>(</td>
+          <td class="paramtype">@PathVariable Long</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Consultar disponibilidad de asientos para un viaje específico. </p>
+<p>Obtiene información en tiempo real sobre asientos disponibles y ocupados para un viaje, desglosado por tipo de asiento. Esencial para el proceso de reserva de boletos.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador único del viaje </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Información detallada de disponibilidad de asientos</dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si el viaje no existe</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Nota</dt><dd>Información actualizada considerando reservas activas </dd>
+<dd>
+Incluye desglose por tipo: "Normal" y "VIP" </dd>
+<dd>
+Usado por frontend para mostrar asientos disponibles </dd></dl>
+<dl class="section warning"><dt>Atención</dt><dd>Implementación stub con datos fijos</dd></dl>
+<dl class="section see"><dt>Ver también</dt><dd>RutasDtos.DisponibilidadResponse </dd>
+<dd>
+<a class="el" href="classcom_1_1andinobus_1_1backendsmartcode_1_1ventas_1_1api_1_1controllers_1_1_ventas_controller.html#a8d4f1660112beec9892fd2a012a0688b" title="Crear nueva reserva de asientos para un viaje.">com.andinobus.backendsmartcode.ventas.api.controllers.VentasController.crearReserva</a> </dd>
+<dd>
+#viajesPorFecha(String, Integer, Integer) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_rutas_controller_8java_source.html#l00159">159</a> del archivo <a class="el" href="_rutas_controller_8java_source.html">RutasController.java</a>.</p>
+
+</div>
+</div>
+<a id="a0900414dbe8a274f6929e61ab2b02c47" name="a0900414dbe8a274f6929e61ab2b02c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0900414dbe8a274f6929e61ab2b02c47">&#9670;&#160;</a></span>viajesPorFecha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RutasDtos.ViajesResponse com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.viajesPorFecha </td>
+          <td>(</td>
+          <td class="paramtype">@RequestParam String</td>          <td class="paramname"><span class="paramname"><em>fecha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(defaultValue=&quot;0&quot;) Integer</td>          <td class="paramname"><span class="paramname"><em>page</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">@RequestParam(defaultValue=&quot;20&quot;) Integer</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtener viajes programados para una fecha específica. </p>
+<p>Lista todos los viajes disponibles en una fecha determinada, incluyendo información de origen, destino, horarios y estado. Útil para mostrar la programación diaria de viajes.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fecha</td><td>Fecha del viaje en formato YYYY-MM-DD (requerido) </td></tr>
+    <tr><td class="paramname">page</td><td>Número de página para paginación (default: 0) </td></tr>
+    <tr><td class="paramname">size</td><td>Tamaño de página (default: 20) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista paginada de viajes programados para la fecha</dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>La fecha es un parámetro obligatorio </dd>
+<dd>
+Estados posibles: "programado", "en_curso", "finalizado", "cancelado" </dd>
+<dd>
+Soporta paginación para fechas con muchos viajes </dd></dl>
+<dl class="section warning"><dt>Atención</dt><dd>Implementación stub con datos de demostración</dd></dl>
+<dl class="section see"><dt>Ver también</dt><dd>RutasDtos.ViajesResponse </dd>
+<dd>
+RutasDtos.ViajeItem </dd>
+<dd>
+#disponibilidad(Long) </dd>
+<dd>
+#busDeViaje(Long) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_rutas_controller_8java_source.html#l00118">118</a> del archivo <a class="el" href="_rutas_controller_8java_source.html">RutasController.java</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>com/andinobus/backendsmartcode/rutas/api/controllers/<a class="el" href="_rutas_controller_8java_source.html">RutasController.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>andinobus</b></li><li class="navelem"><b>backendsmartcode</b></li><li class="navelem"><b>rutas</b></li><li class="navelem"><b>api</b></li><li class="navelem"><b>controllers</b></li><li class="navelem"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html">RutasController</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: Archivo de código fuente com/andinobus/backendsmartcode/rutas/api/controllers/RutasController.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_rutas_controller_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RutasController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>com.andinobus.backendsmartcode.rutas.api.controllers;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.util.Map;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>@RestController</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html">   41</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html">RutasController</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    @GetMapping(<span class="stringliteral">&quot;/rutas/buscar&quot;</span>)</div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a9ac6f5e11e14191211577c71cef77489">   69</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.SearchRouteResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a9ac6f5e11e14191211577c71cef77489">buscarRutas</a>(@RequestParam(required = false) String origen,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                                     @RequestParam(required = false) String destino,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                                     @RequestParam(required = false) String fecha,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                                     @RequestParam(required = false) String cooperativa,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                                     @RequestParam(required = false) String tipoAsiento,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                                     @RequestParam(required = false, name = <span class="stringliteral">&quot;tipoViaje&quot;</span>) String tipoViaje,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                                     @RequestParam(defaultValue = <span class="stringliteral">&quot;0&quot;</span>) Integer page,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                                                     @RequestParam(defaultValue = <span class="stringliteral">&quot;20&quot;</span>) Integer size) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        RutasDtos.SearchRouteItem item = <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_search_route_item.html">SearchRouteItem</a>.builder()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                .frecuenciaId(1L)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                .cooperativaId(1L)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                .cooperativa(<span class="stringliteral">&quot;Cooperativa Demo&quot;</span>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                .origen(origen != <span class="keyword">null</span> ? origen : <span class="stringliteral">&quot;Quito&quot;</span>)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                .destino(destino != <span class="keyword">null</span> ? destino : <span class="stringliteral">&quot;Loja&quot;</span>)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                .horaSalida(<span class="stringliteral">&quot;18:00&quot;</span>)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                .duracionEstimada(<span class="stringliteral">&quot;12:00&quot;</span>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                .tipoViaje(tipoViaje != <span class="keyword">null</span> ? tipoViaje : <span class="stringliteral">&quot;directo&quot;</span>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                .asientosPorTipo(Map.of(<span class="stringliteral">&quot;Normal&quot;</span>, 24, <span class="stringliteral">&quot;VIP&quot;</span>, 8))</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                .build();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_search_route_response.html">SearchRouteResponse</a>.builder()</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                .items(List.of(item))</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                .total(1)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                .page(page)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                .size(size)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                .build();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    @GetMapping(<span class="stringliteral">&quot;/viajes&quot;</span>)</div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a0900414dbe8a274f6929e61ab2b02c47">  118</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.ViajesResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a0900414dbe8a274f6929e61ab2b02c47">viajesPorFecha</a>(@RequestParam String fecha,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                                   @RequestParam(defaultValue = <span class="stringliteral">&quot;0&quot;</span>) Integer page,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                                                   @RequestParam(defaultValue = <span class="stringliteral">&quot;20&quot;</span>) Integer size) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        RutasDtos.ViajeItem v = <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_viaje_item.html">ViajeItem</a>.builder()</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                .<span class="keywordtype">id</span>(1001L)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                .frecuenciaId(1L)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                .fecha(fecha)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                .origen(<span class="stringliteral">&quot;Quito&quot;</span>)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                .destino(<span class="stringliteral">&quot;Loja&quot;</span>)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                .horaSalida(<span class="stringliteral">&quot;18:00&quot;</span>)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                .estado(<span class="stringliteral">&quot;programado&quot;</span>)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                .build();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_viajes_response.html">ViajesResponse</a>.builder()</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                .items(List.of(v))</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                .total(1)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                .page(page)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                .size(size)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                .build();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    @GetMapping(<span class="stringliteral">&quot;/viajes/{id}/disponibilidad&quot;</span>)</div>
+<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a949f84c9dfa6759bbf867ad8ae909cc0">  159</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.DisponibilidadResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a949f84c9dfa6759bbf867ad8ae909cc0">disponibilidad</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_disponibilidad_response.html">DisponibilidadResponse</a>.builder()</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                .viajeId(<span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                .totalAsientos(40)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                .disponibles(28)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                .porTipo(Map.of(<span class="stringliteral">&quot;Normal&quot;</span>, 22, <span class="stringliteral">&quot;VIP&quot;</span>, 6))</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                .build();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    }</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    @GetMapping(<span class="stringliteral">&quot;/viajes/{id}/bus&quot;</span>)</div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#ae17fc13e1c652a8f28056945dd28f35b">  190</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.BusFichaResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#ae17fc13e1c652a8f28056945dd28f35b">busDeViaje</a>(@PathVariable Long <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">RutasDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_bus_ficha_response.html">BusFichaResponse</a>.builder()</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                .viajeId(<span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                .busId(1L)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                .cooperativa(<span class="stringliteral">&quot;Cooperativa Demo&quot;</span>)</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                .numeroInterno(<span class="stringliteral">&quot;10&quot;</span>)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                .placa(<span class="stringliteral">&quot;ABC-1234&quot;</span>)</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                .chasisMarca(<span class="stringliteral">&quot;Volvo&quot;</span>)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                .carroceriaMarca(<span class="stringliteral">&quot;Marcopolo&quot;</span>)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                .fotoUrl(<span class="keyword">null</span>)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                .build();</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
+</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
+</div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html">com.andinobus.backendsmartcode.rutas.api.controllers.RutasController</a></div><div class="ttdoc">Controlador REST para gestión de rutas y viajes disponibles.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">RutasController.java:41</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller_html_a0900414dbe8a274f6929e61ab2b02c47"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a0900414dbe8a274f6929e61ab2b02c47">com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.viajesPorFecha</a></div><div class="ttdeci">RutasDtos.ViajesResponse viajesPorFecha(@RequestParam String fecha, @RequestParam(defaultValue=&quot;0&quot;) Integer page, @RequestParam(defaultValue=&quot;20&quot;) Integer size)</div><div class="ttdoc">Obtener viajes programados para una fecha específica.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">RutasController.java:118</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller_html_a949f84c9dfa6759bbf867ad8ae909cc0"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a949f84c9dfa6759bbf867ad8ae909cc0">com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.disponibilidad</a></div><div class="ttdeci">RutasDtos.DisponibilidadResponse disponibilidad(@PathVariable Long id)</div><div class="ttdoc">Consultar disponibilidad de asientos para un viaje específico.</div><div class="ttdef"><b>Definition</b> <a href="#l00159">RutasController.java:159</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller_html_a9ac6f5e11e14191211577c71cef77489"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#a9ac6f5e11e14191211577c71cef77489">com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.buscarRutas</a></div><div class="ttdeci">RutasDtos.SearchRouteResponse buscarRutas(@RequestParam(required=false) String origen, @RequestParam(required=false) String destino, @RequestParam(required=false) String fecha, @RequestParam(required=false) String cooperativa, @RequestParam(required=false) String tipoAsiento, @RequestParam(required=false, name=&quot;tipoViaje&quot;) String tipoViaje, @RequestParam(defaultValue=&quot;0&quot;) Integer page, @RequestParam(defaultValue=&quot;20&quot;) Integer size)</div><div class="ttdoc">Buscar rutas disponibles con filtros opcionales.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">RutasController.java:69</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller_html_ae17fc13e1c652a8f28056945dd28f35b"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1controllers_1_1_rutas_controller.html#ae17fc13e1c652a8f28056945dd28f35b">com.andinobus.backendsmartcode.rutas.api.controllers.RutasController.busDeViaje</a></div><div class="ttdeci">RutasDtos.BusFichaResponse busDeViaje(@PathVariable Long id)</div><div class="ttdoc">Obtener información del bus asignado a un viaje.</div><div class="ttdef"><b>Definition</b> <a href="#l00190">RutasController.java:190</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_bus_ficha_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_bus_ficha_response.html">com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos.BusFichaResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_rutas_dtos_8java_source.html#l00045">RutasDtos.java:45</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_disponibilidad_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_disponibilidad_response.html">com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos.DisponibilidadResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_rutas_dtos_8java_source.html#l00036">RutasDtos.java:36</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_search_route_item_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_search_route_item.html">com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos.SearchRouteItem</a></div><div class="ttdef"><b>Definition</b> <a href="_rutas_dtos_8java_source.html#l00013">RutasDtos.java:13</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_search_route_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_search_route_response.html">com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos.SearchRouteResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_rutas_dtos_8java_source.html#l00027">RutasDtos.java:27</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_viaje_item_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_viaje_item.html">com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos.ViajeItem</a></div><div class="ttdef"><b>Definition</b> <a href="_rutas_dtos_8java_source.html#l00058">RutasDtos.java:58</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_viajes_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_1_1_viajes_response.html">com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos.ViajesResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_rutas_dtos_8java_source.html#l00070">RutasDtos.java:70</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1rutas_1_1api_1_1dto_1_1_rutas_dtos.html">com.andinobus.backendsmartcode.rutas.api.dto.RutasDtos</a></div><div class="ttdef"><b>Definition</b> <a href="_rutas_dtos_8java_source.html#l00009">RutasDtos.java:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>andinobus</b></li><li class="navelem"><b>backendsmartcode</b></li><li class="navelem"><b>rutas</b></li><li class="navelem"><b>api</b></li><li class="navelem"><b>controllers</b></li><li class="navelem"><b>RutasController.java</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

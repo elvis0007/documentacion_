@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['datos_0',['Datos',['../index.html#autotoc_md31',1,'📊 Base de Datos'],['../index.html#autotoc_md7',1,'Modo Demo (Sin Base de Datos)'],['../index.html#autotoc_md8',1,'Modo Desarrollo (Con Base de Datos)']]],
+  ['de_20app_20móvil_1',['🎯 Para Desarrolladores de App Móvil',['../index.html#autotoc_md49',1,'']]],
+  ['de_20app_20móvil_20cliente_2',['🎯 Para Desarrolladores de App Móvil (Cliente)',['../index.html#autotoc_md2',1,'']]],
+  ['de_20app_20stub_3',['Configuración de app (stub)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md61',1,'']]],
+  ['de_20bus_20stub_4',['Móvil Personal de bus (stub)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md60',1,'']]],
+  ['de_20código_3a_5',['Estándares de código:',['../index.html#autotoc_md39',1,'']]],
+  ['de_20conexión_20a_20bd_6',['Error de conexión a BD',['../index.html#autotoc_md41',1,'']]],
+  ['de_20datos_7',['de Datos',['../index.html#autotoc_md31',1,'📊 Base de Datos'],['../index.html#autotoc_md7',1,'Modo Demo (Sin Base de Datos)'],['../index.html#autotoc_md8',1,'Modo Desarrollo (Con Base de Datos)']]],
+  ['de_20desarrollo_8',['📝 Flujo de Desarrollo',['../index.html#autotoc_md37',1,'']]],
+  ['de_20entorno_9',['Variables de Entorno',['../index.html#autotoc_md28',1,'']]],
+  ['de_20gestión_20de_20transporte_10',['🚌 Backend AndinoBus - Sistema de Gestión de Transporte',['../index.html',1,'']]],
+  ['de_20implementación_20resumen_11',['8. Actividades de implementación (resumen)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_r_c_h_i_t_e_c_t_u_r_e.html#autotoc_md76',1,'']]],
+  ['de_20paquetes_12',['2. Mapeo de paquetes',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_r_c_h_i_t_e_c_t_u_r_e.html#autotoc_md70',1,'']]],
+  ['de_20rutas_20y_20disponibilidad_20stub_13',['Búsqueda de rutas y disponibilidad (stub)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md56',1,'']]],
+  ['de_20transporte_14',['🚌 Backend AndinoBus - Sistema de Gestión de Transporte',['../index.html',1,'']]],
+  ['del_20proyecto_15',['Arquitectura y estructura del proyecto',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_r_c_h_i_t_e_c_t_u_r_e.html',1,'']]],
+  ['demo_20sin_20base_20de_20datos_16',['Modo Demo (Sin Base de Datos)',['../index.html#autotoc_md7',1,'']]],
+  ['desarrolladores_20de_20app_20móvil_17',['🎯 Para Desarrolladores de App Móvil',['../index.html#autotoc_md49',1,'']]],
+  ['desarrolladores_20de_20app_20móvil_20cliente_18',['🎯 Para Desarrolladores de App Móvil (Cliente)',['../index.html#autotoc_md2',1,'']]],
+  ['desarrollo_19',['📝 Flujo de Desarrollo',['../index.html#autotoc_md37',1,'']]],
+  ['desarrollo_20con_20base_20de_20datos_20',['Modo Desarrollo (Con Base de Datos)',['../index.html#autotoc_md8',1,'']]],
+  ['despliegue_21',['🚀 Despliegue',['../index.html#autotoc_md34',1,'']]],
+  ['disponibilidad_20stub_22',['Búsqueda de rutas y disponibilidad (stub)',['../md__c_1_2septimo_2das_2codigo_2backend-andinobus_2_a_p_i.html#autotoc_md56',1,'']]],
+  ['docker_23',['Docker',['../index.html#autotoc_md35',1,'']]],
+  ['documentación_24',['📚 Documentación',['../index.html#autotoc_md1',1,'']]]
+];

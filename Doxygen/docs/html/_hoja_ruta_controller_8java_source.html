@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Backend AndinoBus - SmartCode: Archivo de código fuente com/andinobus/backendsmartcode/operacion/api/controllers/HojaRutaController.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Backend AndinoBus - SmartCode<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Sistema de gestión de transporte interprovincial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_hoja_ruta_controller_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">HojaRutaController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>com.andinobus.backendsmartcode.operacion.api.controllers;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> com.andinobus.backendsmartcode.operacion.api.dto.HojaRutaDtos;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> jakarta.validation.Valid;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> org.springframework.http.HttpStatus;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>@RestController</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html">   39</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html">HojaRutaController</a> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    @PostMapping(<span class="stringliteral">&quot;/hojas-ruta/generar&quot;</span>)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    @ResponseStatus(HttpStatus.ACCEPTED)</div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html#aff1284a1a84c638d26084622d25f8741">   74</a></span>    public <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos.html">HojaRutaDtos</a>.GenerarResponse <a class="code hl_function" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html#aff1284a1a84c638d26084622d25f8741">generar</a>(@Valid @RequestBody <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos.html">HojaRutaDtos</a>.GenerarRequest req) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">// Stub: respuesta aceptada, sin procesamiento real</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos.html">HojaRutaDtos</a>.<a class="code hl_class" href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos_1_1_generar_response.html">GenerarResponse</a>.builder()</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                .fecha(req.getFecha())</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                .cooperativaId(req.getCooperativaId())</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                .modo(req.getModo())</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                .viajesGenerados(0)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                .status(<span class="stringliteral">&quot;ACCEPTED&quot;</span>)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                .message(<span class="stringliteral">&quot;Generación encolada (stub)&quot;</span>)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                .build();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+</div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html">com.andinobus.backendsmartcode.operacion.api.controllers.HojaRutaController</a></div><div class="ttdoc">Controlador REST para generación de hojas de ruta operativas.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">HojaRutaController.java:39</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller_html_aff1284a1a84c638d26084622d25f8741"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1controllers_1_1_hoja_ruta_controller.html#aff1284a1a84c638d26084622d25f8741">com.andinobus.backendsmartcode.operacion.api.controllers.HojaRutaController.generar</a></div><div class="ttdeci">HojaRutaDtos.GenerarResponse generar(@Valid @RequestBody HojaRutaDtos.GenerarRequest req)</div><div class="ttdoc">Generar hojas de ruta para una fecha y cooperativa específica.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">HojaRutaController.java:74</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos_1_1_generar_response_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos_1_1_generar_response.html">com.andinobus.backendsmartcode.operacion.api.dto.HojaRutaDtos.GenerarResponse</a></div><div class="ttdef"><b>Definition</b> <a href="_hoja_ruta_dtos_8java_source.html#l00024">HojaRutaDtos.java:24</a></div></div>
+<div class="ttc" id="aclasscom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos_html"><div class="ttname"><a href="classcom_1_1andinobus_1_1backendsmartcode_1_1operacion_1_1api_1_1dto_1_1_hoja_ruta_dtos.html">com.andinobus.backendsmartcode.operacion.api.dto.HojaRutaDtos</a></div><div class="ttdef"><b>Definition</b> <a href="_hoja_ruta_dtos_8java_source.html#l00009">HojaRutaDtos.java:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>andinobus</b></li><li class="navelem"><b>backendsmartcode</b></li><li class="navelem"><b>operacion</b></li><li class="navelem"><b>api</b></li><li class="navelem"><b>controllers</b></li><li class="navelem"><b>HojaRutaController.java</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
