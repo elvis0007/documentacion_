@@ -1,0 +1,309 @@
+# 🚌 Andino Bus - Backend
+
+Plataforma integral de gestión para cooperativas de transporte que permite reservas online de viajes, gestión de flotas, operaciones en tiempo real, procesamiento de pagos, generación de boletos con códigos QR y ventas presenciales en terminales. Sistema escalable basado en arquitectura de microservicios con Spring Boot.
+
+## Comenzando 🚀
+
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo._
+
+## Pre-requisitos 📋
+
+_Que cosas necesitas para instalar el software y como instalarlas_
+
+```
+- Java Development Kit (JDK) 11+
+  Descargar desde: https://www.oracle.com/java/technologies/downloads/
+
+- Maven 3.8.1 o superior
+  Descargar desde: https://maven.apache.org/download.cgi
+
+- Git 2.30 o superior
+  Descargar desde: https://git-scm.com/
+
+- PostgreSQL 14+ o MySQL 8.0+ (para base de datos)
+  PostgreSQL: https://www.postgresql.org/download/
+  MySQL: https://www.mysql.com/downloads/
+
+- Postman (opcional, para probar endpoints)
+  Descargar desde: https://www.postman.com/
+
+- Docker y Docker Compose (opcional, para entornos containerizados)
+  Descargar desde: https://www.docker.com/
+```
+
+Verifica la instalación ejecutando:
+
+```bash
+java -version
+mvn -version
+git --version
+```
+
+## Instalación 🔧
+
+_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+
+**Paso 1: Clonar el repositorio**
+
+_Clona el proyecto desde GitHub a tu máquina local_
+
+```bash
+git clone https://github.com/AlexiP18/backend-andinobus.git
+cd backend-andinobus
+```
+
+**Paso 2: Configurar variables de ambiente**
+
+_Crea el archivo de configuración local copiando el archivo example_
+
+```bash
+cp src/main/resources/application-dev.properties.example src/main/resources/application-dev.properties
+```
+
+Edita `src/main/resources/application-dev.properties` y ajusta los parámetros de conexión:
+
+```properties
+# Puerto de la aplicación
+server.port=8080
+
+# Configuración de base de datos (PostgreSQL)
+spring.datasource.url=jdbc:postgresql://localhost:5432/andino_bus
+spring.datasource.username=tu_usuario
+spring.datasource.password=tu_password
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA/Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL10Dialect
+
+# Logging
+logging.level.root=INFO
+logging.level.com.andinobus=DEBUG
+```
+
+**Paso 3: Crear la base de datos**
+
+_Crea la base de datos mediante tu cliente de PostgreSQL o MySQL_
+
+```bash
+# Para PostgreSQL
+psql -U postgres
+CREATE DATABASE andino_bus;
+```
+
+**Paso 4: Descargar dependencias y compilar**
+
+_Descarga todas las dependencias del proyecto y compila el código_
+
+```bash
+mvn clean install
+```
+
+**Paso 5: Ejecutar la aplicación**
+
+_Inicia el servidor Spring Boot en tu máquina local_
+
+**En Windows (PowerShell):**
+
+```powershell
+.\mvnw.cmd -Dspring.profiles.active=dev spring-boot:run
+```
+
+**En Linux / macOS:**
+
+```bash
+./mvnw -Dspring.profiles.active=dev spring-boot:run
+```
+
+O desde tu IDE (IntelliJ IDEA, Eclipse, VSCode):
+- Click derecho en la clase principal de la aplicación
+- Selecciona "Run" o "Run As > Java Application"
+
+### Ejecutar Tests
+
+```bash
+mvn test
+```
+
+### Empaquetar la aplicación
+
+```bash
+mvn package
+java -jar target/*.jar
+```
+
+## Estructura del Proyecto 📁
+
+```
+backend-andinobus/
+├── src/
+│   ├── main/
+│   │   ├── java/com/andinobus/       # Código fuente principal
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       ├── application-dev.properties
+│   │       └── db/migration/          # Migraciones SQL (Flyway)
+│   └── test/                          # Tests unitarios e integración
+├── postman/                           # Colecciones y entorno Postman
+├── uploads/                           # Archivos subidos (fotos, logos)
+├── docker-compose.yml                 # Configuración Docker Compose
+├── pom.xml                            # Configuración Maven
+├── mvnw y mvnw.cmd                    # Maven Wrapper
+└── README.md                          # Este archivo
+```
+
+## Uso de Postman 📮
+
+- Importa las colecciones desde la carpeta `postman/`
+- Importa el entorno `Local.postman_environment.json` para configurar variables locales
+- Utiliza las colecciones para probar todos los endpoints disponibles
+
+## Migraciones de Base de Datos 🗄️
+
+Las migraciones SQL se encuentran en `src/main/resources/db/migration/` y se aplican automáticamente mediante Flyway al iniciar la aplicación.
+
+Si necesitas aplicar migraciones manualmente, ejecuta los scripts SQL en el orden correcto desde tu cliente de base de datos.
+
+## Docker 🐳
+
+**Compilar imagen Docker:**
+
+```bash
+docker build -t andinobus-backend:1.0.0 .
+```
+
+**Ejecutar contenedor:**
+
+```bash
+docker run -p 8080:8080 \
+  -e SPRING_PROFILES_ACTIVE=dev \
+  -e DB_URL=jdbc:postgresql://localhost:5432/andino_bus \
+  -e DB_USER=tu_usuario \
+  -e DB_PASSWORD=tu_password \
+  andinobus-backend:1.0.0
+```
+
+**Con docker-compose:**
+
+```bash
+docker-compose up --build
+```
+
+## Construido con 🛠️
+
+* [Spring Boot 3.x](https://spring.io/projects/spring-boot) - Framework web principal
+* [Spring Data JPA](https://spring.io/projects/spring-data-jpa) - Acceso a datos y ORM
+* [Spring Security](https://spring.io/projects/spring-security) - Autenticación y autorización
+* [Maven](https://maven.apache.org/) - Gestor de dependencias
+* [PostgreSQL](https://www.postgresql.org/) - Base de datos relacional
+* [JWT](https://jwt.io/) - Autenticación basada en tokens
+* [Hibernate](https://hibernate.org/) - ORM (Object-Relational Mapping)
+* [Lombok](https://projectlombok.org/) - Reducción de boilerplate
+* [Google Zxing](https://github.com/zxing/zxing) - Generación de códigos QR
+* [Jackson](https://github.com/FasterXML/jackson) - Serialización JSON
+* [SLF4J](https://www.slf4j.org/) - Logging
+* [JUnit 5](https://junit.org/junit5/) - Framework de testing
+
+## Documentación 📚
+
+Este backend cuenta con documentación generada automáticamente mediante diferentes herramientas para facilitar la comprensión y mantenimiento del sistema.
+
+**📄 JavaDocs** - Documentación del código fuente (clases, métodos y estructuras)
+- 🔗 [Ver JavaDocs](https://github.com/elvis0007/documentacion_/tree/main/Javadoc)
+
+**📘 Doxygen** - Arquitectura del sistema, diagramas y relaciones entre módulos
+- 🔗 [Ver Doxygen](https://github.com/elvis0007/documentacion_/tree/main/Doxygen)
+
+**🔥 Swagger / OpenAPI** - Documentación navegable de endpoints REST
+- 📌 Se visualiza desde el backend en ejecución
+- 🔗 [Ver Swagger](https://github.com/elvis0007/documentacion_/tree/main/Swagger)
+
+## Contribuyendo 🤝
+
+¡Las contribuciones son bienvenidas! Si deseas contribuir al proyecto, sigue estos pasos:
+
+### 1. Fork el Repositorio
+
+Haz un fork del proyecto en GitHub para crear tu propia copia.
+
+### 2. Crear una Rama para tu Feature
+
+```bash
+git checkout -b feature/AmazingFeature
+```
+
+### 3. Realizar tus Cambios
+
+- Realiza los cambios necesarios en tu rama
+- Asegúrate de que el código siga las convenciones del proyecto
+- Escribe tests para las nuevas funcionalidades
+
+### 4. Commitear tus Cambios
+
+```bash
+git add .
+git commit -m 'Add some AmazingFeature'
+```
+
+### 5. Push a tu Rama
+
+```bash
+git push origin feature/AmazingFeature
+```
+
+### 6. Abrir un Pull Request
+
+- Ve a GitHub y abre un Pull Request desde tu rama hacia `main`
+- Proporciona una descripción clara de los cambios realizados
+- Menciona cualquier issue relacionado (ej: #123)
+
+### Guías de Contribución 📋
+
+Para contribuir de forma efectiva, ten en cuenta lo siguiente:
+
+- **Código**: Mantén la estructura y convenciones del proyecto
+- **Tests**: Todo cambio debe incluir tests unitarios o de integración
+- **Documentación**: Actualiza la documentación si tus cambios lo requieren
+- **Commits**: Usa mensajes de commit descriptivos en inglés o español
+- **Ramas**: Usa nombres descriptivos (feature/*, bugfix/*, etc.)
+
+### Reportar Bugs 🐛
+
+Si encuentras un bug, abre un issue con:
+- Descripción clara del problema
+- Pasos para reproducirlo
+- Comportamiento esperado vs actual
+- Capturas de pantalla si es relevante
+- Información de tu entorno (Java version, OS, etc.)
+
+### Solicitar Nuevas Características 💡
+
+Si tienes ideas para nuevas características, abre un issue con:
+- Descripción clara de la funcionalidad
+- Caso de uso y beneficio
+- Ejemplos o mockups si es posible
+
+## Autores ✒️
+
+* **Elvis Flores** - *Trabajo Inicial* - [AlexiP18](https://github.com/AlexiP18)
+* **Alexis Poaquiza** - *Documentación JavaDocs* - [apoaquiza](https://github.com/apoaquiza)
+* **Melanie Silva** - *Testing y QA* - [Katty-dev](https://github.com/katty-dev)
+* **Jeferson Poaquiza** - *Documentación Técnica* - [jpoaquiza](https://github.com/jpoaquiza)
+* **Alex Ponluisa** - *DevOps y Deployment* - [XLexus](https://github.com/xLexus)
+
+Puedes ver la lista completa de [contribuyentes](https://github.com/AlexiP18/backend-andinobus/contributors) que han participado en este proyecto.
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para más detalles.
+
+```
+MIT License
+
+Copyright (c) 2024 Andino Bus
+```
+
+---
+
+⌨️ con ❤️ por [Andina Bus Team](https://github.com/AlexiP18) 😊
